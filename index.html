@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Disney Characters</title>
+  </head>
+  <body>
+    <h1>Disney Characters</h1>
+    <ul id="name"></ul>
+    <div>
+      <h2 id="name"></h2>
+      <img id="imageUrl" src="" alt="">
+      <p>Films: <span id="films"></span></p>
+      <p>Short Films: <span id="shortfilms"></span></p>
+      <p>TV Shows: <span id="tvshows"></span></p>
+      <p>Video Games: <span id="videoGames"></span></p>
+      <p>Park Attractions: <span id="parkAttractions"></span></p>
+      <p>Allies: <span id="allies"></span></p>
+      <p>Enemies: <span id="enemies"></span></p>
+    </div>
+    <script>
+      const charactersUrl = 'http://localhost:3000/characters';
+      
+      // Fetch character data from server
+      fetch(`${charactersUrl}/1`)
+        .then(response => response.json())
+        .then(character => {
+          // Update character details on the page
+          document.querySelector('#name').textContent = character.name;
+          document.querySelector('#imageUrl').src = character.imageUrl;
+          document.querySelector('#films').textContent = character.films;
+          document.querySelector('#shortfilms').textContent = character.shortfilms;
+          document.querySelector('#tvshows').textContent = character.tvshows;
+          document.querySelector('#videoGames').textContent = character.videoGames;
+          document.querySelector('#parkAttractions').src = character.parkAttractions;
+          document.querySelector('#allies').textContent = character.allies;
+          document.querySelector('#enemies').textContent = character.enemies;
+        });
+      
+      // Fetch all characters from server and populate the list
+      fetch(charactersUrl)
+        .then(response => response.json())
+        .then(characters => {
+          const characterList = document.querySelector('#name');
+          characters.forEach(character => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#';
+            a.textContent = character.name;
+            a.addEventListener('click', () => {
+              // Fetch character data from server and update character details on the page
+              fetch(`${charactersUrl}/${character.id}`)
+                .then(response => response.json())
+                .then(character => {
+                  document.querySelector('#name').textContent = character.name;
+                  document.querySelector('#imageUrl').src = character.imageUrl;
+                  document.querySelector('#films').textContent = character.films;
+                  document.querySelector('#shortfilms').textContent = character.shortfilms;
+                  document.querySelector('#tvshows').textContent = character.tvshows;
+                  document.querySelector('#videoGames').textContent = character.videoGames;
+                  document.querySelector('#parkAttractions').src = character.parkAttractions;
+                  document.querySelector('#allies').textContent = character.allies;
+                  document.querySelector('#enemies').textContent = character.enemies;
+                });
+            });
+            li.appendChild(a);
+            characterList.appendChild(li);
+          });
+        });
+    </script>
+  </body>
+</html>
