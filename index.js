@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const charactersUrl = 'https://api.disneyapi.dev/characters';
-  const dataContainer = document.getElementsByClassName('data-container')
+  const dataContainer = document.getElementsByClassName('data-container')[0]
   // Fetch character data from server
   fetch(charactersUrl)
     .then(response => response.json())
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.querySelector('#enemies').textContent = character.enemies;
                 document.querySelector('#name').textContent = character.name;
                 document.querySelector('#imageUrl').src= character.imageUrl;
-                document.querySelector('#likes').textContent=character.likes;
+                // document.querySelector('#likes').textContent=character.likes;
                 //Uovote and Downvote button
                 const upvoteButton = document.createElement('button');
                 upvoteButton.textContent = 'like';
