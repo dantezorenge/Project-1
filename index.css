@@ -20,10 +20,11 @@
       }
       
       img {
+        padding: auto;
         display: block;
         margin: 0 auto;
-        width: 1400px;
-        height:1400px;
+        width: auto;
+        height:auto;
       }
       
       .data-container {
