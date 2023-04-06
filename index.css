@@ -22,6 +22,8 @@
       img {
         display: block;
         margin: 0 auto;
+        width: 1400px;
+        height:720px;
       }
       
       .data-container {
@@ -45,7 +47,7 @@
       
       #name {
         text-align: center;
-        font-size: 24px;
+        font-size: 48px;
         margin-bottom: 20px;
       }
       
@@ -54,7 +56,7 @@
         margin-right: 10px;
         cursor: pointer;
         border-radius: 5px;
-        background-color: #444;
+        background-color:#444;
         padding: 5px 10px;
       }
       

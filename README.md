@@ -10,6 +10,9 @@ Disney Character Wiki is a web application that allows users to browse a list of
   
 
 #Project Set Up Instructions
+
+using  the live link below
+(https://dantezorenge.github.io/Project-1/)
 1.Clone the repository to your local machine.
 2.Open the project in your preferred code editor.
 3.Open the index.html file in your browser.
@@ -17,6 +20,9 @@ Disney Character Wiki is a web application that allows users to browse a list of
 5.Click on a character's name to view more details about the character.
 6.To upvote or downvote a character, click on the corresponding button.
 
+#Author
+This application was created by [Daniel Orenge ].
 
-Link to Live Site
-[Your Live Site Link Here]
+
+#License and Copyright information
+This project is licensed under the MIT License.
